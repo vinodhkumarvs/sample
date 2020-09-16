@@ -1,0 +1,292 @@
+---
+version: '3.7'
+services:
+  cms:
+    image: scopear/scope-cms:on-prem-2.13.2
+    networks:
+    - backend
+    - database
+    secrets:
+    - cms_password
+    - cms_secret_key
+    - cms_secret_token
+    - cms_smtp_password
+    - mysql_root_password
+    - mysql_password
+#    - zeus_encryption_cert
+    - cms_twilio_account_sid
+    - cms_twilio_auth_token
+    - cms_twilio_test_account_sid
+    - cms_twilio_test_auth_token
+    env_file:
+    - cms.env
+    - mariadb.env
+    deploy:
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: start-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: start-first
+      mode: global
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    volumes:
+    - "/mnt/shared/cms_private:/cms/private"
+    - "/mnt/shared/cms_public:/cms/public"
+    environment:
+      SECRET_ENV_PREFIXES: SCOPECMS SCOPECMSDB SCOPECMSSMS
+  sidekiq:
+    image: scopear/scope-cms:on-prem-2.13.2
+    networks:
+    - backend
+    - database
+    secrets:
+    - cms_password
+    - cms_secret_key
+    - cms_secret_token
+    - cms_smtp_password
+    - mysql_root_password
+    - mysql_password
+    - zeus_encryption_cert
+    - cms_twilio_account_sid
+    - cms_twilio_auth_token
+    - cms_twilio_test_account_sid
+    - cms_twilio_test_auth_token
+    env_file:
+    - cms.env
+    - mariadb.env
+    deploy:
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: start-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: start-first
+      replicas: 1
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    volumes:
+    - "/mnt/shared/cms_private:/cms/private"
+    - "/mnt/shared/cms_public:/cms/public"
+    environment:
+      SECRET_ENV_PREFIXES: SCOPECMS SCOPECMSDB
+      START_SIDEKIQ: 'true'
+  mariadb:
+    image: scopear/docker-db:on-prem-2.13.2
+    networks:
+    - database
+    secrets:
+    - mysql_root_password
+    - mysql_password
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: stop-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: stop-first
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    volumes:
+    - "/mnt/shared/db_data:/var/lib/mysql"
+    env_file:
+    - mariadb.env
+    environment:
+      SECRET_ENV_PREFIXES: SCOPEMYSQL SCOPECMSDB
+  nginx:
+    image: scopear/docker-nginx:on-prem-2.13.2
+    ports:
+    - 80:8000
+    - 443:8001
+    networks:
+    - backend
+    secrets: []
+    deploy:
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: start-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: start-first
+      mode: global
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    volumes:
+    - "/mnt/shared/nginx/:/data/"
+    - "/mnt/shared/certbot/:/certbot/"
+    env_file:
+    - nginx_web.env
+  muxer:
+    image: scopear/docker-muxer:on-prem-2.13.2
+    networks:
+    - backend
+    deploy:
+      mode: global
+      #      resources:
+      #        limits:
+      #          cpus: '0.75'
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: start-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: start-first
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    volumes:
+    - "/mnt/shared/cms_private:/cms/private"
+    env_file:
+    - muxer.env
+  resource_svc:
+    image: scopear/scope-resource-service:on-prem-2.13.2
+    #    ports:
+    #    - 2020:2020
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: stop-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: stop-first
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    env_file:
+    - resource_svc.env
+    networks:
+    - backend
+    - database
+  res-svc-postgres:
+    image: scopear/docker-postgres:on-prem-2.13.2
+    ports:
+    - 5432:5432
+    networks:
+    - database
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: stop-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: stop-first
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    env_file:
+    - resource_svc.env
+    volumes:
+    - "/mnt/shared/resource_svc_db_data:/var/lib/postgresql/data/"
+  redis_cms:
+    image: scopear/docker-redis:on-prem-2.13.2
+    ports:
+    - 6379:6379
+    sysctls:
+      net.core.somaxconn: 65535 
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: stop-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: stop-first
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    networks:
+    - backend
+    volumes:
+    - "/mnt/shared/redis_cms:/data"
+networks:
+  backend:
+    driver: overlay
+    attachable: true
+    ipam:
+      config:
+      - subnet: 172.21.0.0/16
+  database:
+    driver: overlay
+    attachable: true
+    ipam:
+      config:
+      - subnet: 172.22.0.0/16
+secrets:
+  cms_password:
+    file: "./secrets/cms_password"
+  cms_secret_key:
+    file: "./secrets/cms_secret_key"
+  cms_secret_token:
+    file: "./secrets/cms_secret_token"
+  cms_smtp_password:
+    file: "./secrets/cms_smtp_password"
+  mysql_root_password:
+    file: "./secrets/mysql_root_password"
+  mysql_password:
+    file: "./secrets/mysql_password"
+  zeus_encryption_cert:
+    file: "./secrets/zeus_encryption_cert"
+  cms_twilio_account_sid:
+    file: "./secrets/cms_twilio_account_sid"
+  cms_twilio_auth_token:
+    file: "./secrets/cms_twilio_auth_token"
+  cms_twilio_test_account_sid:
+    file: "./secrets/cms_twilio_test_account_sid"
+  cms_twilio_test_auth_token:
+    file: "./secrets/cms_twilio_test_auth_token"

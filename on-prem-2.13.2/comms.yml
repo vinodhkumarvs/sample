@@ -1,0 +1,76 @@
+---
+version: '3.7'
+services:
+  zeus:
+    image: scopear/docker-zeus:on-prem-2.13.2
+    secrets:
+    - zeus_encryption_cert
+    - zeus_encryption_key
+    - zeus_encryption_password
+    deploy:
+      mode: global
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: stop-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: stop-first
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    networks:
+    - outside
+    env_file:
+    - zeus.env
+    environment:
+      SECRET_ENV_PREFIXES: SCOPEZEUS
+  redis_zeus:
+    image: scopear/docker-redis:on-prem-2.13.2
+    ports:
+    - 6380:6379
+    sysctls:
+      net.core.somaxconn: 65535
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 0s
+        failure_action: rollback
+        order: stop-first
+      rollback_config:
+        parallelism: 0
+        delay: 0s
+        failure_action: pause
+        order: stop-first
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+    networks:
+    - backend
+    volumes:
+    - "/mnt/shared/redis_zeus:/data"
+networks:
+  backend:
+    driver: overlay
+    attachable: true
+    ipam:
+      config:
+      - subnet: 172.23.0.0/16
+  outside:
+    name: swarm
+    external: false
+secrets:
+  zeus_encryption_cert:
+    file: "./secrets/zeus_encryption_cert"
+  zeus_encryption_key:
+    file: "./secrets/zeus_encryption_key"
+  zeus_encryption_password:
+    file: "./secrets/zeus_encryption_password"

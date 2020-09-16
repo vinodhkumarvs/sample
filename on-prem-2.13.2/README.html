@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<!--
+==============================================================================
+           "GitHub HTML5 Pandoc Template" v2.1 — by Tristano Ajmone           
+==============================================================================
+Copyright © Tristano Ajmone, 2017, MIT License (MIT). Project's home:
+
+- https://github.com/tajmone/pandoc-goodies
+
+The CSS in this template reuses source code taken from the following projects:
+
+- GitHub Markdown CSS: Copyright © Sindre Sorhus, MIT License (MIT):
+  https://github.com/sindresorhus/github-markdown-css
+
+- Primer CSS: Copyright © 2016-2017 GitHub Inc., MIT License (MIT):
+  http://primercss.io/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The MIT License 
+
+Copyright (c) Tristano Ajmone, 2017 (github.com/tajmone/pandoc-goodies)
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+Copyright (c) 2017 GitHub Inc.
+
+"GitHub Pandoc HTML5 Template" is Copyright (c) Tristano Ajmone, 2017, released
+under the MIT License (MIT); it contains readaptations of substantial portions
+of the following third party softwares:
+
+(1) "GitHub Markdown CSS", Copyright (c) Sindre Sorhus, MIT License (MIT).
+(2) "Primer CSS", Copyright (c) 2016 GitHub Inc., MIT License (MIT).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:"\00a0"}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<h1 id="scope-ar-installation-guide">Scope AR Installation Guide</h1>
+<p>Provides a way to run the Scope AR server software using Docker in swarm mode.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Docker swarm cluster with 1, 3 or 3+ nodes
+<ul>
+<li>Docker version 18.06.0+</li>
+<li>Each server must have a directory which is shared between all the nodes</li>
+</ul></li>
+<li>Docker Hub account authorized by Scope AR</li>
+<li>SMTP server for email</li>
+<li>Valid TLS certificate for HTTPS</li>
+<li>MySQL/MariaDB server (optional)</li>
+<li>Cloud storage for user content (optional)
+<ul>
+<li>S3</li>
+</ul></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="firewall-ports">Firewall Ports</h3>
+<ol type="1">
+<li><p>Private network, communication between nodes in the cluster.</p>
+<ul>
+<li><p>Swarm cluster</p>
+<table>
+<thead>
+<tr class="header">
+<th>Port</th>
+<th>Protocol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2377</td>
+<td>TCP</td>
+<td>Swarm cluster management communication</td>
+</tr>
+<tr class="even">
+<td>7946</td>
+<td>TCP</td>
+<td>Swarm node communication</td>
+</tr>
+<tr class="odd">
+<td>7946</td>
+<td>UDP</td>
+<td>Swarm node communication</td>
+</tr>
+<tr class="even">
+<td>4789</td>
+<td>UDP</td>
+<td>Swarm overlay network</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li><p>Public network, this could be a WLAN address accessible throughout your organization or a public IP address.</p>
+<ul>
+<li><p>Web Stack</p>
+<table>
+<thead>
+<tr class="header">
+<th>Port</th>
+<th>Protocol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>80</td>
+<td>TCP</td>
+<td>HTTP</td>
+</tr>
+<tr class="even">
+<td>443</td>
+<td>TCP</td>
+<td>HTTPS</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Comms Stack</p>
+<table>
+<thead>
+<tr class="header">
+<th>Port</th>
+<th>Protocol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>24000</td>
+<td>UDP</td>
+<td>Zeus Service</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Proxy Stack</p>
+<table>
+<thead>
+<tr class="header">
+<th>Port</th>
+<th>Protocol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8030</td>
+<td>TCP</td>
+<td>Ping Service</td>
+</tr>
+<tr class="even">
+<td>3478</td>
+<td>TCP</td>
+<td>Turn Service</td>
+</tr>
+<tr class="odd">
+<td>3478</td>
+<td>UDP</td>
+<td>Turn Service</td>
+</tr>
+<tr class="even">
+<td>49152-65535</td>
+<td>UDP</td>
+<td>Turn Communication</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ol>
+<h3 id="docker-swarm">Docker Swarm</h3>
+<p>Each server in the cluster must be running docker in swarm mode. Please see the <a href="https://docs.docker.com/engine/swarm/">swarm mode overview</a> and <a href="https://docs.docker.com/engine/swarm/key-concepts/">key concepts</a> for more information.</p>
+<ol type="1">
+<li><p>Install docker, please see the <a href="https://docs.docker.com/install/">installation instructions</a> for your operating system.</p></li>
+<li><p>To verify your installation on each server, you can run the following commands:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">$ <span class="ex">docker</span> --version</a>
+<a class="sourceLine" id="cb1-2" title="2">$ <span class="ex">docker</span> run --rm hello-world</a></code></pre></div></li>
+<li><p>Choose a node to be a manager and sign in to <a href="https://hub.docker.com/">Docker Hub</a> with the credentials authorized by Scope AR.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">$ <span class="ex">docker</span> login</a></code></pre></div></li>
+<li><p>On the same node, initialize the swarm cluster.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1">$ <span class="ex">docker</span> swarm init --advertise-addr 0.0.0.0:2377</a>
+<a class="sourceLine" id="cb3-2" title="2">$ <span class="ex">docker</span> swarm join-token manager</a></code></pre></div></li>
+<li><p>For each remaining nodes in the cluster, run the command printed by the previous step. Optional if this is a single node cluster.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1">$ <span class="ex">docker</span> swarm join --token <span class="st">&quot;&lt;Swarm Token&gt;&quot;</span> <span class="st">&quot;&lt;IP Address&gt;:2377&quot;</span></a></code></pre></div></li>
+</ol>
+<h3 id="shared-directory">Shared Directory</h3>
+<ul>
+<li><p>In this guide, the shared directory is referenced as <code>/mnt/shared</code>.</p></li>
+<li><p><em>Single node cluster</em>: The directory doesn’t have to be shared and can exist any where on the file system. If the cluster expands in the future then this directory must be shared.</p></li>
+<li><p><em>Multiple node cluster</em>: All nodes in the cluster must have access to a shared directory. It is recommended that this directory is automatically mounted at boot. Options include:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Network_File_System">NFS</a> Share</li>
+<li>Amazon Web Services <a href="https://aws.amazon.com/efs/">EFS</a></li>
+<li><a href="https://www.gluster.org/">GlusterFS</a></li>
+<li><a href="https://ceph.com/">Ceph</a></li>
+</ul></li>
+</ul>
+<ol type="1">
+<li><p>Create shared directories.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1">$ <span class="fu">mkdir</span> -p /mnt/shared/cms_private /mnt/shared/cms_public /mnt/shared/db_data /mnt/shared/redis_cms /mnt/shared/redis_zeus /mnt/shared/nginx /mnt/resource_svc</a></code></pre></div></li>
+<li><p>Set file permissions.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1">$ <span class="fu">chown</span> -R 1000:999 /mnt/shared/cms_private /mnt/shared/cms_public</a>
+<a class="sourceLine" id="cb6-2" title="2">$ <span class="fu">chown</span> -R 999:999 /mnt/shared/db_data /mnt/shared/redis_cms /mnt/shared/redis_zeus /mnt/shared/nginx /mnt/resource_svc </a>
+<a class="sourceLine" id="cb6-3" title="3">$ <span class="fu">chmod</span> 600 /mnt/shared</a></code></pre></div></li>
+</ol>
+<h3 id="configuration">Configuration</h3>
+<ul>
+<li>In this guide, the configuration files are located in <code>/opt/scope</code></li>
+<li>By default, docker secrets are stored in the directory <code>/opt/scope/secrets</code></li>
+</ul>
+<h4 id="cms">CMS</h4>
+<p>File: <code>/opt/scope/cms.env</code></p>
+<ul>
+<li><p>Secrets (required)</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>secrets/cms_password</code></td>
+<td>Password for the initial admin user, the password must be at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character</td>
+</tr>
+<tr class="even">
+<td><code>secrets/cms_secret_key</code></td>
+<td>Random string of at least 64 characters: <code>openssl rand -hex 128</code></td>
+</tr>
+<tr class="odd">
+<td><code>secrets/cms_secret_token</code></td>
+<td>Random string of at least 64 characters: <code>openssl rand -hex 128</code></td>
+</tr>
+<tr class="even">
+<td><code>secrets/cms_smtp_password</code></td>
+<td>SMTP Password</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Initial administrator user (required)</p>
+<table>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>COMPANY_NAME</code></td>
+<td>Name of the compay to create</td>
+</tr>
+<tr class="even">
+<td><code>FIRST_NAME</code></td>
+<td>First name of the admin user</td>
+</tr>
+<tr class="odd">
+<td><code>LAST_NAME</code></td>
+<td>Last name of the admin user</td>
+</tr>
+<tr class="even">
+<td><code>EMAIL</code></td>
+<td>Email address, used to sign in</td>
+</tr>
+<tr class="odd">
+<td><code>PHONE_NUMBER</code></td>
+<td>Phone number of the admin user</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Web site (required)</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>CMS_PROTOCOL</code></td>
+<td><code>https</code>, <code>http</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>CMS_HOST</code></td>
+<td></td>
+<td>Host name or IP address of single swarm node</td>
+</tr>
+<tr class="odd">
+<td><code>CMS_PORT</code></td>
+<td><code>443</code>, <code>80</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>CMS_AUTH_METHOD</code></td>
+<td><code>db</code>, <code>ldap</code></td>
+<td>Method of authentication, either local database or using LDAP</td>
+</tr>
+<tr class="odd">
+<td><code>FILE_STORAGE</code></td>
+<td><code>local</code>, <code>s3</code></td>
+<td>Where user content is stored, <code>local</code> stores content in the shared directory and <code>s3</code> in an AWS <a href="https://aws.amazon.com/s3/">S3</a> bucket</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Web site (optional)</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>VIRUS_SCAN_ENABLED</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td>Virus scan user uploaded content</td>
+</tr>
+<tr class="even">
+<td><code>AUTH_TOKEN_DURATION</code></td>
+<td><code>[count] [unit]</code></td>
+<td>Authentication tokens are valid for this duration, units can be: <code>hour</code>, <code>hours</code>, <code>day</code>, <code>days</code>, <code>month</code>, <code>months</code></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>SMTP (required)</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>EMAIL_SENDER</code></td>
+<td></td>
+<td>Email address FROM header</td>
+</tr>
+<tr class="even">
+<td><code>SMTP_ADDRESS</code></td>
+<td></td>
+<td>Host name of the SMTP server</td>
+</tr>
+<tr class="odd">
+<td><code>SMTP_PORT</code></td>
+<td></td>
+<td>Port used to connect to the SMTP server</td>
+</tr>
+<tr class="even">
+<td><code>SMTP_DOMAIN</code></td>
+<td></td>
+<td>If the SMTP server requires a HELO domain, specify it here (required for Amazon SES)</td>
+</tr>
+<tr class="odd">
+<td><code>SMTP_USER_NAME</code></td>
+<td></td>
+<td>User name (password is specified above in a docker secret)</td>
+</tr>
+<tr class="even">
+<td><code>SMTP_AUTHENTICATION</code></td>
+<td><code>plain</code>, <code>login</code>, <code>cram_md5</code></td>
+<td>Type of authentication for the SMTP server (use <code>login</code> for Amazon SES)</td>
+</tr>
+<tr class="odd">
+<td><code>SMTP_OPENSSL_VERIFY_MODE</code></td>
+<td><code>none</code>, <code>peer</code>, <code>client_once</code>, <code>fail_if_no_peer_cert</code></td>
+<td>Specifies certificate validation when using TLS</td>
+</tr>
+<tr class="even">
+<td><code>SMTP_ENABLE_STARTTLS_AUTO</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td>Automatically use TLS if available</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Network Grid</p>
+<ul>
+<li>Describes how clients connect to the swarm nodes</li>
+<li>Each server block represents a single swarm node that is located in a geographical region</li>
+<li><p>Increase the number in <code>SERVER_x</code> for every server</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>SERVER_x_LABEL</code></td>
+<td><code>On Prem</code></td>
+<td>Label for this group of servers, all servers with the same label are grouped together</td>
+</tr>
+<tr class="even">
+<td><code>SERVER_x_ZEUS_EXTERNAL_HOST</code></td>
+<td>
+Domain or IP address of the swarm node which clients will use to connect* 
+</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>SERVER_x_ZEUS_EXTERNAL_PORT</code></td>
+<td><code>24000</code></td>
+<td>External port</td>
+</tr>
+<tr class="even">
+<td><code>SERVER_x_ZEUS_ENCRYPTION_CERT</code></td>
+<td>Certificate used by Zeus for encryption</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>SERVER_x_PING_EXTERNAL_HOST</code></td>
+<td>Domain or IP address of the swarm node which clients will use to connect*</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>SERVER_x_PING_EXTERNAL_PORT</code></td>
+<td><code>8030</code></td>
+<td>External port</td>
+</tr>
+<tr class="odd">
+<td><code>SERVER_x_TURN_EXTERNAL_HOST</code></td>
+<td>Domain or IP address of the swarm node which clients will use to connect*</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>SERVER_x_TURN_EXTERNAL_PORT</code></td>
+<td><code>3478</code></td>
+<td>External port</td>
+</tr>
+<tr class="odd">
+<td><code>SERVER_x_TUNNEL_EXTERNAL_HOST</code></td>
+<td>*</td>
+<td>Unused</td>
+</tr>
+<tr class="even">
+<td><code>SERVER_x_TUNNEL_EXTERNAL_PORT</code></td>
+<td></td>
+<td>Unused</td>
+</tr>
+</tbody>
+</table>
+<p>*Do not use localhost or local IPs (e.g. 127.0.0.1) for the value, instead use externally referenced domain name (fqdn) or external IP of server if required. </p>
+</li>
+</ul></li>
+</ul>
+<h4 id="nginx">Nginx</h4>
+<p>By default, nginx will start with a self signed certificate for HTTPS requests if none is provided. To use another certificate, either replace the secret file listed below or use a symlink to the actual file.</p>
+<ul>
+<li><p>Secrets to modify (optional)</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>secrets/nginx_ssl_cert</code></td>
+<td>TLS/SSL certificate, maps to the nginx setting <a href="http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate">ssl_certificate</a></td>
+</tr>
+<tr class="even">
+<td><code>secrets/nginx_ssl_key</code></td>
+<td>TLS/SSL certificate secret key, maps to the nginx setting <a href="http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate_key">ssl_certificate_key</a></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h4 id="mariadb">MariaDB</h4>
+<p>File: <code>/opt/scope/mariadb.env</code></p>
+<ul>
+<li><p>If using an external database server, comment out the <code>mariadb:</code> section in <code>web.yml</code> and configure the required connection details.</p></li>
+<li><p>Database configuration (required)</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MYSQL_ROOT_USER</code></td>
+<td>Root user name</td>
+</tr>
+<tr class="even">
+<td><code>MYSQL_USER</code></td>
+<td>User name</td>
+</tr>
+<tr class="odd">
+<td><code>MYSQL_HOST</code></td>
+<td>If using the MariaDB docker container, specify <code>mariadb</code>, otherwise the host of the database server (such as AWS <a href="https://aws.amazon.com/rds/">RDS</a>)</td>
+</tr>
+<tr class="even">
+<td><code>MYSQL_PORT</code></td>
+<td>Database port</td>
+</tr>
+<tr class="odd">
+<td><code>MYSQL_DATABASE</code></td>
+<td>Database name</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>secrets/mysql_root_password</code></td>
+<td>Root user password</td>
+</tr>
+<tr class="even">
+<td><code>secrets/mysql_password</code></td>
+<td>User password</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h4 id="zeus">Zeus</h4>
+<p>Create a new PKCS12 encryption certificate for Zeus. Setting a password on the certificate is optional.</p>
+<ol type="1">
+<li><p>Create the certificate.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1">$ <span class="bu">cd</span> /opt/scope/</a>
+<a class="sourceLine" id="cb7-2" title="2">$ <span class="ex">openssl</span> req -x509 -newkey rsa:4096 -keyout /tmp/zeus_key.pem -out secrets/zeus_encryption_cert -days 3650 -nodes</a>
+<a class="sourceLine" id="cb7-3" title="3">$ <span class="ex">openssl</span> pkcs12 -in secrets/zeus_encryption_cert -inkey /tmp/zeus_key.pem -export -out secrets/zeus_encryption_key</a></code></pre></div></li>
+</ol>
+<p>If you created the certificate with a password, update the file <code>secrets/zeus_encryption_password</code> with the password.</p>
+<h4 id="turn">Turn</h4>
+<p>File: <code>/opt/scope/turn.env</code></p>
+<ul>
+<li><p>If behind NAT (such as EC2 instances) then one entry of <code>TURN_EXTERNAL_IPV4_x</code> is required for every swarm node.</p></li>
+<li><p>Turn configuration (required)</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>TURN_SERVER_PORT</code></td>
+<td>Listen port for turn</td>
+</tr>
+<tr class="even">
+<td><code>TURN_RELAY_PORT_RANGE_MIN</code></td>
+<td>First port in the relay range</td>
+</tr>
+<tr class="odd">
+<td><code>TURN_RELAY_PORT_RANGE_MAX</code></td>
+<td>Last port in the relay range</td>
+</tr>
+<tr class="even">
+<td><code>TURN_EXTERNAL_IPV4_x</code></td>
+<td>Mapping of <code>&lt;Public IP&gt;/&lt;Private IP&gt;</code> address for swarm nodes behind NAT (increment <code>x</code> for every server)</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h3 id="ldap">LDAP</h3>
+<p>An LDAP server can be used to manage user authentication. To enable LDAP, configure the following variables in <code>cms.env</code>. When a user authenticates via LDAP for the first time, the CMS will import their name, phone number, and email address from the LDAP directory via the <code>_ATTRIBUTE</code> keys.</p>
+<p>File: <code>/opt/scope/cms.env</code></p>
+<ul>
+<li><p>LDAP environment variables (optional)</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>CMS_AUTH_METHOD</code></td>
+<td><code>ldap</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>LDAP_HOST</code></td>
+<td></td>
+<td>Host name of the LDAP server</td>
+</tr>
+<tr class="odd">
+<td><code>LDAP_PORT</code></td>
+<td><code>389</code>, <code>636</code></td>
+<td>Port used to connect to the LDAP server</td>
+</tr>
+<tr class="even">
+<td><code>LDAP_SSL</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td>Enable or disable encryption (TLS)</td>
+</tr>
+<tr class="odd">
+<td><code>LDAP_AUTH_ATTRIBUTE</code></td>
+<td></td>
+<td>LDAP attribute used for authentication (user name)</td>
+</tr>
+<tr class="even">
+<td><code>LDAP_AUTH_PASSWORD_TYPE</code></td>
+<td><code>sha</code>, <code>md5</code></td>
+<td>Type of password</td>
+</tr>
+<tr class="odd">
+<td><code>LDAP_DN_BASE</code></td>
+<td></td>
+<td>LDAP base DN</td>
+</tr>
+<tr class="even">
+<td><code>LDAP_ADMIN_USER</code></td>
+<td></td>
+<td>LDAP admin user</td>
+</tr>
+<tr class="odd">
+<td><code>LDAP_FIRST_NAME_ATTRIBUTE</code></td>
+<td></td>
+<td>LDAP attribute which has the user’s first name</td>
+</tr>
+<tr class="even">
+<td><code>LDAP_LAST_NAME_ATTRIBUTE</code></td>
+<td></td>
+<td>LDAP attribute which has the user’s last name</td>
+</tr>
+<tr class="odd">
+<td><code>LDAP_EMAIL_ATTRIBUTE</code></td>
+<td></td>
+<td>LDAP attribute which contains the user’s email address</td>
+</tr>
+<tr class="even">
+<td><code>LDAP_PHONE_NUMBER_ATTRIBUTE</code></td>
+<td></td>
+<td>LDAP attribute which contains the user’s phone number</td>
+</tr>
+<tr class="odd">
+<td><code>LDAP_CREATE_USER</code></td>
+<td></td>
+<td>Set to false by default.When set to true, a user trying to login, that currently does not exist in LDAP, is created in LDAP automatically.</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>LDAP secrets (optional)</p>
+<table>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>secrets/cms_ldap_admin_password</code></td>
+<td>LDAP admin password</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><strong>Note:</strong></p>
+<ul>
+<li><p>When LDAP is enabled on existing installations, users will only be able to continue to use Scope AR products if:</p>
+<ul>
+<li>their LDAP account email address exactly matches the email address already entered in the CMS</li>
+<li>their LDAP account can be authenticated via the configuration provided</li>
+</ul>
+<p>It is likely that any existing users will need to be notified that their password may have changed.</p>
+<p>No data will be removed or deleted for any existing users who would not able to authenticate via LDAP.</p></li>
+<li><p>If your LDAP server exists outside of your Docker Swarm, you may need to add a host name mapping to <code>web.yml</code>. This will allow containers running within Swarm to resolve addresses from outside of Docker’s internal DNS:</p>
+<pre><code>services:
+  cms:
+    ...
+    extra_hosts:
+    - &quot;example.com:192.168.1.123&quot;</code></pre></li>
+</ul>
+<h3 id="aws">AWS</h3>
+<p>Enables users content to be stored in a S3 bucket. Both <code>AWS_ACCESS_KEY_ID</code> and</p>
+<p>File: <code>/opt/scope/cms.env</code></p>
+<ul>
+<li><p>AWS configuration (optional)</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>FILE_STORAGE</code></td>
+<td>Set to <code>s3</code></td>
+</tr>
+<tr class="even">
+<td><code>CMS_DEFAULT_S3_BUCKET</code></td>
+<td>The S3 bucket to store user content when <code>FILE_STORAGE</code> is <code>s3</code></td>
+</tr>
+<tr class="odd">
+<td><code>CMS_DEFAULT_S3_REGION</code></td>
+<td>The region of the S3 bucket specified by <code>CMS_DEFAULT_S3_BUCKET</code></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><strong>Note:</strong></p>
+<ul>
+<li><p>Instead of setting <code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code> in the environment, consider creating an IAM role and attaching the role to each swarm node. To give the nodes access to the S3 bucket, attach the following policy to the role (replacing <code>&lt;s3 bucket&gt;</code> with the name of the S3 bucket):</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-2" title="2">    <span class="dt">&quot;Version&quot;</span><span class="fu">:</span> <span class="st">&quot;2012-10-17&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-3" title="3">    <span class="dt">&quot;Statement&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb9-4" title="4">        <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-5" title="5">            <span class="dt">&quot;Sid&quot;</span><span class="fu">:</span> <span class="st">&quot;&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-6" title="6">            <span class="dt">&quot;Effect&quot;</span><span class="fu">:</span> <span class="st">&quot;Allow&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-7" title="7">            <span class="dt">&quot;Action&quot;</span><span class="fu">:</span> <span class="st">&quot;s3:ListBucket&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-8" title="8">            <span class="dt">&quot;Resource&quot;</span><span class="fu">:</span> <span class="st">&quot;arn:aws:s3:::&lt;s3 bucket&gt;</span></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="st">        },</span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="st">        {</span></a>
+<a class="sourceLine" id="cb9-11" title="11"><span class="st">            &quot;</span><span class="er">Sid</span><span class="st">&quot;: &quot;&quot;,</span></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="st">            &quot;</span><span class="er">Effect</span><span class="st">&quot;: &quot;</span><span class="er">Allow</span><span class="st">&quot;,</span></a>
+<a class="sourceLine" id="cb9-13" title="13"><span class="st">            &quot;</span><span class="er">Action</span><span class="st">&quot;: [</span></a>
+<a class="sourceLine" id="cb9-14" title="14"><span class="st">                &quot;</span><span class="er">s3:PutObjectAcl</span><span class="st">&quot;,</span></a>
+<a class="sourceLine" id="cb9-15" title="15"><span class="st">                &quot;</span><span class="er">s3:PutObject</span><span class="st">&quot;,</span></a>
+<a class="sourceLine" id="cb9-16" title="16"><span class="st">                &quot;</span><span class="er">s3:GetObject</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb9-17" title="17"><span class="st">            ],</span></a>
+<a class="sourceLine" id="cb9-18" title="18"><span class="st">            &quot;</span><span class="er">Resource</span><span class="st">&quot;: &quot;</span><span class="er">arn:aws:s3:::&lt;s3</span> <span class="er">bucket&gt;/*</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb9-19" title="19"><span class="st">        }</span></a>
+<a class="sourceLine" id="cb9-20" title="20"><span class="st">    ]</span></a>
+<a class="sourceLine" id="cb9-21" title="21"><span class="st">}</span></a></code></pre></div></li>
+</ul>
+<h2 id="deployment">Deployment</h2>
+<ol type="1">
+<li><p>Change directory.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1">$ <span class="bu">cd</span> /opt/scope/</a></code></pre></div></li>
+<li><p>If any nodes in the cluster do not have access to the internet, please see the section <strong>Installation Without the Internet</strong>.</p></li>
+<li><p>Deploy the stacks. Depending on the speed of the machines, internet and other factors, initialization may take some time.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># If the nodes do no have access to the internet, add the command line option: --resolve-image=never</span></a>
+<a class="sourceLine" id="cb11-2" title="2">$ <span class="ex">docker</span> stack deploy --compose-file web.yml --prune --with-registry-auth web</a>
+<a class="sourceLine" id="cb11-3" title="3">$ <span class="ex">docker</span> stack deploy --compose-file comms.yml --prune --with-registry-auth comms</a>
+<a class="sourceLine" id="cb11-4" title="4">$ <span class="ex">docker</span> stack deploy --compose-file proxy.yml --prune --with-registry-auth proxy</a></code></pre></div></li>
+<li><p>To monitor migration progress, the list of services can be viewed. Some services can take several minutes to start and will show as <code>0</code> until their health check has passed.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1">$ <span class="ex">docker</span> service ls</a></code></pre></div></li>
+</ol>
+<h3 id="common-docker-swarm-commands">Common Docker Swarm Commands</h3>
+<ul>
+<li><code>docker service ls</code> - List running services. Service names can be found <code>NAME</code> column for later commands.</li>
+<li><code>docker service ps --no-trunc &lt;service name&gt;</code> - Status of a running service.</li>
+<li><code>docker service logs --since 1h -f &lt;service name&gt;</code> - Tail logs for a service.</li>
+<li><code>docker stack rm &lt;stack name&gt;</code> - Remove a stack, stack names are: <code>web</code>, <code>comms</code>, <code>proxy</code>. Removing a stack can take some time (repeat the command until nothing is found in the stack).</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ol type="1">
+<li><p>Check all ports which are listed under <strong>Firewall Ports</strong> in <code>README.md</code> are open.</p></li>
+<li><p>If the shared directory is a network share or remote, check that it is mounted.</p></li>
+<li><p>Check status of all services. Service name can be found under the <code>NAME</code> column for subsequent commands.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1">$ <span class="ex">docker</span> service ls</a></code></pre></div></li>
+<li><p>If a container cannot start, check any error messages for the service.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" title="1">$ <span class="ex">docker</span> service ps --no-trunc web_cms</a></code></pre></div></li>
+<li><p>View the logs for a service.</p>
+<pre><code>$ docker service logs --since 1h -f web_cms</code></pre></li>
+</ol>
+<h3 id="installation-without-the-internet">Installation Without the Internet</h3>
+<p>If any nodes in the cluster do not have access to the internet, then the docker images must first be downloaded and then transferred manually to the node.</p>
+<p>The required images can be downloaded on a machine with <code>docker</code> and a connection to the internet. Docker can be <a href="https://docs.docker.com/install/">installed</a> on Linux, Windows and MacOS.</p>
+<ol type="1">
+<li><p>Sign in to <a href="https://hub.docker.com/">Docker Hub</a> with the credentials authorized by Scope AR.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" title="1">$ <span class="ex">docker</span> login</a></code></pre></div></li>
+<li><p>Pull images.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" title="1">$ <span class="ex">docker</span> pull scopear/scope-cms:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb17-2" title="2">$ <span class="ex">docker</span> pull scopear/docker-nginx:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb17-3" title="3">$ <span class="ex">docker</span> pull scopear/docker-db:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb17-4" title="4">$ <span class="ex">docker</span> pull scopear/docker-zeus:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb17-5" title="5">$ <span class="ex">docker</span> pull scopear/docker-redis:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb17-6" title="6">$ <span class="ex">docker</span> pull scopear/docker-turnserver:on-prem-2.13.2</a></code></pre></div></li>
+<li><p>Export images.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" title="1">$ <span class="ex">docker</span> save -o scope-cms.tar         scopear/scope-cms:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb18-2" title="2">$ <span class="ex">docker</span> save -o docker-nginx.tar      scopear/docker-nginx:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb18-3" title="3">$ <span class="ex">docker</span> save -o docker-db.tar         scopear/docker-db:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb18-4" title="4">$ <span class="ex">docker</span> save -o docker-zeus.tar       scopear/docker-zeus:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb18-5" title="5">$ <span class="ex">docker</span> save -o docker-redis.tar      scopear/docker-redis:on-prem-2.13.2</a>
+<a class="sourceLine" id="cb18-6" title="6">$ <span class="ex">docker</span> save -o docker-turnserver.tar scopear/docker-turnserver:on-prem-2.13.2</a></code></pre></div></li>
+<li><p>Docker images will saved to the respective <code>.tar</code> files. Once all the <code>.tar</code> files have been transferred to each node in the cluster, change directory to where the files are located and run:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" title="1">$ <span class="co"># On the target server</span></a>
+<a class="sourceLine" id="cb19-2" title="2">$ <span class="ex">docker</span> load -i scope-cms.tar</a>
+<a class="sourceLine" id="cb19-3" title="3">$ <span class="ex">docker</span> load -i docker-nginx.tar</a>
+<a class="sourceLine" id="cb19-4" title="4">$ <span class="ex">docker</span> load -i docker-db.tar</a>
+<a class="sourceLine" id="cb19-5" title="5">$ <span class="ex">docker</span> load -i docker-zeus.tar</a>
+<a class="sourceLine" id="cb19-6" title="6">$ <span class="ex">docker</span> load -i docker-redis.tar</a>
+<a class="sourceLine" id="cb19-7" title="7">$ <span class="ex">docker</span> load -i docker-turnserver.tar</a></code></pre></div></li>
+</ol>
+<h2 id="verifying-a-proper-setup">Verifying a Proper Setup</h2>
+<p>After installing or updating Scope AR Intranet there are a few ways to verify that everything is working as expected.</p>
+<h3 id="verifying-the-cms">Verifying the CMS</h3>
+<ol type="1">
+<li>Using a device that can run Remote AR and WorkLink, open the browser and try to access the CMS using your configured domain/IP.</li>
+<li>Once loaded, log in using the login credentials configured in the <code>cms.env</code> file.
+<ul>
+<li>It’s best to change your password to something not mentioned in the <code>cms.env</code> file for security reasons.</li>
+</ul></li>
+</ol>
+<h3 id="verifying-remote-ar">Verifying Remote AR</h3>
+<ol type="1">
+<li>Install and/or launch Remote AR.</li>
+<li>Log out if you are currently logged in.</li>
+<li>From the login screen select the “Advanced Settings” button.</li>
+<li>Enter your configured domain/IP and press “Save”.</li>
+<li>Restart the app after setting those values.</li>
+<li>Once launched, login using your CMS credentials.</li>
+<li>If the login is successful, the app is communicating with the CMS.</li>
+<li>After logging in, Tap on “AR view” on the bottom of contact list.</li>
+<li>You will see a warning message asking if you would like to return to contact list. Press “no”.</li>
+<li>Tap on settings gear icon on the right side.</li>
+<li>Under Diagnostics, Every status light should be green.</li>
+<li>If every light is green, use a second device configured with Remote AR and try to make a connection.</li>
+</ol>
+<h3 id="verifying-worklink-player">Verifying WorkLink Player</h3>
+<ol type="1">
+<li>Install and/or launch WorkLink Player app.</li>
+<li>Log out if you are currently logged in.</li>
+<li>From the login screen, select the “settings” gear icon from top right.</li>
+<li>A menu will appear, select “Custom CMS Endpoint”.</li>
+<li>Enter your configured Domain/IP. Restart the app after setting those values. (ignore “Custom Guest Authentication” field, leave it blank)</li>
+<li>Once relaunched login using your CMS credentials.</li>
+<li>If logging in works, then WorkLink is setup properly.</li>
+</ol>
+<h3 id="verifying-worklink-launcher">Verifying WorkLink Launcher</h3>
+<ol type="1">
+<li>Install and/or launch WorkLink Launcher.</li>
+<li>From the top menu bar, select “WorkLink” &gt; “Custom CMS Endpoint”</li>
+<li>Enter your configured domain/IP and press “OK”. Restart the app after setting those values.</li>
+<li>Once relaunched, login using your CMS credentials.</li>
+<li>If logging in works, then WorkLink Launcher is setup properly.</li>
+</ol>
+<h3 id="verifying-worklink-authoring-platform">Verifying WorkLink Authoring Platform</h3>
+<ol type="1">
+<li>Create a new WorkLink project or Launch an existing WorkLink project (Refer to the WorkLink Authoring Platform documentation for more details if needed).</li>
+<li>Once launched, click on WorkLink from top menu bar &gt; Options &gt; Custom CMS Endpoint.</li>
+<li>Select “Custom” from CMS API Mode drop-down.</li>
+<li>Enter your configured domain/IP in “CMS Custom API URL” field.</li>
+<li>Click on “Test Connection” to check connectivity with CMS.</li>
+<li>Click on “Save Changes” and close this window.</li>
+<li>From top menu bar, go to the “WorkLink” &gt; “Publish” and login using your CMS credentials.</li>
+<li>You are now set up to publish WorkLink Projects on your CMS instance.</li>
+</ol>
+</article>
+</body>
+</html>
